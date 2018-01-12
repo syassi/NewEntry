@@ -14,6 +14,11 @@ enum ButtonKind:Int {
     case edit = 1
 }
 
+protocol EntryVCDelegate {
+    
+    func entryBtn(userName:String)
+}
+
 class EntryVC: UIViewController {
 
     let pickerView: UIPickerView = UIPickerView()
@@ -21,6 +26,10 @@ class EntryVC: UIViewController {
                 "大きな窯出しとろけるプリン","ふんわり生どら焼（白玉入り）","香ばしほうじ茶ラテ"]
     
     var kind:ButtonKind!
+    // コールバック　Optional 型で保持します。　ラベルは省力します。
+    var callbackReturnTapped: ((_ userName: String) -> Void)? = nil
+    // デリゲート(委譲)　デリゲートの設定は任意なので Optional 型で保持します。
+    var delegate: EntryVCDelegate?
     
     private var sex:Int = 0
     private var sweet:Int = 0
@@ -33,6 +42,7 @@ class EntryVC: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var sweetText: UITextField!
     @IBOutlet weak var sexSeg: UISegmentedControl!
+    @IBOutlet weak var mailSwitch: UISwitch!
     
     // MARK: life Cycle
     
@@ -153,6 +163,7 @@ class EntryVC: UIViewController {
             sex = unarchiveEntry.sex
             sexSeg.selectedSegmentIndex = unarchiveEntry.sex
             sweet = unarchiveEntry.sweetKind
+            mailSwitch.setOn(unarchiveEntry.mailPermissionFlg, animated: false)
             
         }
     }
@@ -178,12 +189,19 @@ class EntryVC: UIViewController {
             userName:self.userNameText.text!,
             email:self.emailText.text,
             sex:self.sex,
-            sweetKind:self.sweet
+            sweetKind:self.sweet,
+            mailPermissionFlg:self.mailSwitch.isOn
         )
         //シリアライズ
         let archive = NSKeyedArchiver.archivedData(withRootObject: entry)
         userDefaults.set(archive, forKey:"entry")
         userDefaults.synchronize()
+        
+        //コールバックの処理
+        callbackReturnTapped?(self.userNameText.text!)
+        
+        //デリゲートの処理
+        delegate?.entryBtn(userName: self.userNameText.text!)
         
     }
     

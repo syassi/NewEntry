@@ -16,19 +16,24 @@ class Entry: NSObject, NSCoding {
     //””でも0を選択する為、非オプショナル
     var sweetKind:Int
     
+    // on/off
+    var mailPermissionFlg:Bool
+    
     
     // イニシャライザ
     init(
         userName: String,
         email: String?,
         sex: Int,
-        sweetKind: Int
+        sweetKind: Int,
+        mailPermissionFlg:Bool
         )
     {
         self.userName = userName
         self.email = email
         self.sex = sex
         self.sweetKind = sweetKind
+        self.mailPermissionFlg = mailPermissionFlg
     }
     
     func encode(with aCoder: NSCoder) {
@@ -36,6 +41,7 @@ class Entry: NSObject, NSCoding {
         aCoder.encode(email, forKey:"email")
         aCoder.encode(sex, forKey:"sex")
         aCoder.encode(sweetKind, forKey:"sweetKind")
+        aCoder.encode(mailPermissionFlg, forKey:"mailPermission")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +49,7 @@ class Entry: NSObject, NSCoding {
         self.email = aDecoder.decodeObject(forKey: "email") as? String
         self.sex = aDecoder.decodeInteger(forKey: "sex")
         self.sweetKind = aDecoder.decodeInteger(forKey: "sweetKind")
+        self.mailPermissionFlg = aDecoder.decodeBool(forKey: "mailPermission")
     }
     
     

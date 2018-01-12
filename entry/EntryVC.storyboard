@@ -127,25 +127,39 @@
                                 <rect key="frame" x="20" y="70" width="335" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r2-id-0UC">
-                                        <rect key="frame" x="10" y="12" width="48" height="19"/>
+                                        <rect key="frame" x="10" y="12" width="46" height="19"/>
                                         <attributedString key="attributedText">
                                             <fragment content="※">
                                                 <attributes>
+                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                                     <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="16" name=".LucidaGrandeUI"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="名前:">
+                                            <fragment content="名前">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="HiraginoSans-W3"/>
+                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.99232127568493156" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                                    <font key="NSOriginalFont" size="16" name="HiraginoSans-W3"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=":">
+                                                <attributes>
+                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.99232127568493156" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name=".LucidaGrandeUI"/>
+                                                    <font key="NSOriginalFont" size="16" name=".LucidaGrandeUI"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="全角で入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-kI-SIE">
-                                        <rect key="frame" x="63" y="7" width="267" height="30"/>
+                                        <rect key="frame" x="61" y="7" width="269" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -154,11 +168,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="FoQ-kI-SIE" firstAttribute="centerY" secondItem="Nz8-b0-Ne6" secondAttribute="centerY" id="G27-Qi-hcS"/>
-                                    <constraint firstAttribute="trailing" secondItem="FoQ-kI-SIE" secondAttribute="trailing" constant="5" id="ciG-Xb-o7Y"/>
-                                    <constraint firstItem="6r2-id-0UC" firstAttribute="centerY" secondItem="Nz8-b0-Ne6" secondAttribute="centerY" id="cl7-TD-sAG"/>
+                                    <constraint firstItem="6r2-id-0UC" firstAttribute="centerY" secondItem="Nz8-b0-Ne6" secondAttribute="centerY" id="OjS-7M-oKW"/>
                                     <constraint firstItem="6r2-id-0UC" firstAttribute="leading" secondItem="Nz8-b0-Ne6" secondAttribute="leading" constant="10" id="eTm-Cz-nBl"/>
                                     <constraint firstItem="FoQ-kI-SIE" firstAttribute="leading" secondItem="6r2-id-0UC" secondAttribute="trailing" constant="5" id="kqC-D1-U3b"/>
                                     <constraint firstAttribute="height" constant="44" id="mND-fv-vum"/>
+                                    <constraint firstAttribute="trailing" secondItem="FoQ-kI-SIE" secondAttribute="trailing" constant="5" id="wOK-hI-96r"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzU-eZ-HA5" userLabel="MailView">
@@ -177,7 +191,7 @@
                                         <rect key="frame" x="75" y="7" width="255" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -251,25 +265,53 @@
                                     <constraint firstItem="zoD-jP-eW3" firstAttribute="leading" secondItem="KRi-D2-frp" secondAttribute="leading" constant="10" id="a0r-zJ-qrd"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0E4-9a-TAA" userLabel="mailPermissionView">
+                                <rect key="frame" x="20" y="266" width="335" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メール許可:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGy-9l-x4Q">
+                                        <rect key="frame" x="10" y="11" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="sgT-DL-WRx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-50-ADr">
+                                        <rect key="frame" x="281" y="6.5" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wGy-9l-x4Q" firstAttribute="centerY" secondItem="0E4-9a-TAA" secondAttribute="centerY" id="Gby-Vn-ppf"/>
+                                    <constraint firstItem="wGy-9l-x4Q" firstAttribute="leading" secondItem="0E4-9a-TAA" secondAttribute="leading" constant="10" id="Pww-aW-2eb"/>
+                                    <constraint firstAttribute="height" constant="44" id="f1y-5f-Wib"/>
+                                    <constraint firstAttribute="trailing" secondItem="mQo-50-ADr" secondAttribute="trailing" constant="5" id="o2t-4h-wh0"/>
+                                    <constraint firstItem="mQo-50-ADr" firstAttribute="centerY" secondItem="0E4-9a-TAA" secondAttribute="centerY" id="uja-QZ-TTP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KRi-D2-frp" firstAttribute="trailing" secondItem="Ko6-gn-kos" secondAttribute="trailing" id="4PR-1H-Hif"/>
                             <constraint firstItem="ZfF-9u-0b3" firstAttribute="trailing" secondItem="LRN-NI-HJP" secondAttribute="trailing" constant="10" id="4RG-0S-Q65"/>
                             <constraint firstItem="KRi-D2-frp" firstAttribute="top" secondItem="Ko6-gn-kos" secondAttribute="bottom" constant="5" id="6Dq-Tw-uIP"/>
+                            <constraint firstItem="0E4-9a-TAA" firstAttribute="leading" secondItem="Ko6-gn-kos" secondAttribute="leading" id="6Vx-Yd-Ipp"/>
                             <constraint firstItem="Nz8-b0-Ne6" firstAttribute="top" secondItem="ZfF-9u-0b3" secondAttribute="top" constant="50" id="7KG-pr-aPk"/>
                             <constraint firstItem="wzU-eZ-HA5" firstAttribute="trailing" secondItem="Nz8-b0-Ne6" secondAttribute="trailing" id="Au1-FS-yuS"/>
+                            <constraint firstItem="0E4-9a-TAA" firstAttribute="top" secondItem="KRi-D2-frp" secondAttribute="bottom" constant="5" id="B2Y-Ie-b46"/>
                             <constraint firstItem="yuF-Ic-bkA" firstAttribute="leading" secondItem="ZfF-9u-0b3" secondAttribute="leading" constant="10" id="Bvm-nK-wJa"/>
                             <constraint firstItem="Ko6-gn-kos" firstAttribute="leading" secondItem="wzU-eZ-HA5" secondAttribute="leading" id="De5-rg-wNM"/>
+                            <constraint firstItem="0E4-9a-TAA" firstAttribute="trailing" secondItem="Ko6-gn-kos" secondAttribute="trailing" id="Ffo-jE-g4n"/>
                             <constraint firstItem="KRi-D2-frp" firstAttribute="leading" secondItem="Ko6-gn-kos" secondAttribute="leading" id="Np4-BK-njX"/>
                             <constraint firstItem="LRN-NI-HJP" firstAttribute="leading" secondItem="ZfF-9u-0b3" secondAttribute="leading" constant="10" id="Oa3-Gn-C9H"/>
+                            <constraint firstItem="wzU-eZ-HA5" firstAttribute="leading" secondItem="Nz8-b0-Ne6" secondAttribute="leading" id="RAb-Nw-vbA"/>
                             <constraint firstItem="Nz8-b0-Ne6" firstAttribute="leading" secondItem="ZfF-9u-0b3" secondAttribute="leading" constant="20" id="UwU-h4-9j4"/>
                             <constraint firstItem="wzU-eZ-HA5" firstAttribute="top" secondItem="Nz8-b0-Ne6" secondAttribute="bottom" constant="5" id="YRF-gi-nkg"/>
                             <constraint firstItem="ZfF-9u-0b3" firstAttribute="trailing" secondItem="Nz8-b0-Ne6" secondAttribute="trailing" constant="20" id="ZHu-P0-j7l"/>
                             <constraint firstItem="Ko6-gn-kos" firstAttribute="top" secondItem="wzU-eZ-HA5" secondAttribute="bottom" constant="5" id="aq4-Pl-BE3"/>
                             <constraint firstItem="yuF-Ic-bkA" firstAttribute="top" secondItem="rhl-g6-cnO" secondAttribute="bottom" constant="10" id="fi9-Wg-ffU"/>
                             <constraint firstItem="Ko6-gn-kos" firstAttribute="trailing" secondItem="wzU-eZ-HA5" secondAttribute="trailing" id="hpj-54-2ia"/>
-                            <constraint firstItem="wzU-eZ-HA5" firstAttribute="leading" secondItem="Nz8-b0-Ne6" secondAttribute="leading" id="j9c-ar-2gF"/>
                             <constraint firstItem="ZfF-9u-0b3" firstAttribute="bottom" secondItem="yuF-Ic-bkA" secondAttribute="bottom" constant="20" id="mjA-Q4-S7j"/>
                             <constraint firstItem="ZfF-9u-0b3" firstAttribute="trailing" secondItem="rhl-g6-cnO" secondAttribute="trailing" constant="10" id="nC0-NO-TDv"/>
                             <constraint firstItem="ZfF-9u-0b3" firstAttribute="trailing" secondItem="yuF-Ic-bkA" secondAttribute="trailing" constant="10" id="rDV-N0-TzS"/>
@@ -281,6 +323,7 @@
                     <connections>
                         <outlet property="editBtnView" destination="rhl-g6-cnO" id="5oC-vG-hk7"/>
                         <outlet property="emailText" destination="n5N-bk-V0k" id="Zdl-ly-UDO"/>
+                        <outlet property="mailSwitch" destination="mQo-50-ADr" id="3Af-qZ-BKU"/>
                         <outlet property="newBtnView" destination="LRN-NI-HJP" id="Xf3-CQ-Y4W"/>
                         <outlet property="sexSeg" destination="TXQ-Kr-VS8" id="KEB-nf-N70"/>
                         <outlet property="sweetText" destination="eMf-IA-l0L" id="Ksy-R6-eud"/>

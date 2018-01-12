@@ -5,6 +5,7 @@
 //  Created by yasushi saitoh on 2017/12/19.
 //  Copyright © 2017年 SunQ Inc. All rights reserved.
 //
+// github url :https://github.com/syassi/NewEntry
 
 import UIKit
 
@@ -47,22 +48,38 @@ class ViewController: UIViewController {
     // MARK: IBAction
     // TODO: テスト
     // FIXME: 最終的に直す
+    // https://qiita.com/roworks/items/cd5cb05bd83585325db7
     
     @IBAction func tapButtonNew(_ sender: AnyObject) {
-        let vc = EntryVC.instantiate()
-        vc.kind = .new
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+        print("- NewButton -")
+        createEntry(kind:.new)
     }
     
     @IBAction func tapButtonEdit(_ sender: AnyObject) {
-        let vc = EntryVC.instantiate()
-        vc.kind = .edit
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+        print("- EditButton -")
+        
+        createEntry(kind:.edit)
     }
     
     // MARK: private
+    
+    private func createEntry(kind:ButtonKind) {
+        
+        let vc = EntryVC.instantiate()
+        vc.kind = kind
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        //デリゲート設定
+        vc.delegate = self
+        
+        // コールバック処理
+        vc.callbackReturnTapped = {(userName:String) -> Void in
+            print("- callback - userName:\(userName)")
+            self.setupUI()
+        }
+        
+        present(vc, animated: true, completion: nil)
+    }
     
     /**
      画面セットアップ用
@@ -82,9 +99,12 @@ class ViewController: UIViewController {
             print("useName:\(unarchiveEntry.userName)")
         }
     }
-    
-    
-    
+}
 
+extension ViewController : EntryVCDelegate {
+    func entryBtn(userName:String) {
+        print("- delegate - userName:\(userName)")
+        
+    }
 }
 
